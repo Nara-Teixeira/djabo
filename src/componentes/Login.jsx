@@ -5,13 +5,14 @@ import React, { useState } from 'react';
 import Input from "./InputLogin/Email";
 import { BsPerson } from "react-icons/bs";
 import Botao from "./buttonLogin/Botao";
+import BotaoLC from "./buttonLogin/BotaoLc";
 
 
 
 function Login() {
     function logarUsuario(e) {
         e.preventDefault()
-        console.log(`usuario ${email} foi cadastratado com a senha: ${password}`)
+        console.log(`usuario ${email} foi logado com a senha: ${password}`)
     }
 
     const [password, setPassword] = useState()
@@ -30,6 +31,8 @@ function Login() {
             </div>
 
             <div className="form">
+
+                <BotaoLC/>
 
                 <form onSubmit={logarUsuario}>
 
@@ -57,13 +60,22 @@ function Login() {
 
                     />
 
-                    <Botao
-                    className="botaologin"
-                    type={"button"}
-                    value={login}
-                    onClick={ login(email, password)}
+                    <div>
 
-                    />
+                        <label className="labelCadastrar">
+
+                            <button
+                                className="BotaoLogar"
+                                type="button"
+                                value={login}
+                                onClick={() => login(email, password)}
+                            > <h3>Login</h3>
+                            </button>
+
+                        </label>
+                    </div>
+
+
 
                 </form>
             </div>

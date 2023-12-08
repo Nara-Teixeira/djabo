@@ -1,6 +1,6 @@
 
 
-function BotaoLembre(props) {
+function Botao(props) {
 
     return (
         <div>
@@ -8,10 +8,10 @@ function BotaoLembre(props) {
                 <input
                     value={props.value}
                     value2={props.value2}
-                    className="checkbox"
                     type={props.type}
                     checked={props.lembrar}
                     onChange={props.onChange}
+                    onClick={props.onClick}
                 />
                 <h4>Lembre-se de mim</h4>
             </label>
@@ -22,4 +22,4 @@ function BotaoLembre(props) {
 
 }
 
-export default BotaoLembre;
+export default Botao;

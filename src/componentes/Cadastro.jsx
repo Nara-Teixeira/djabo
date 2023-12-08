@@ -1,87 +1,73 @@
-
+import "../styles/Cadastro.sass"
+import { useState } from "react"
+import Input from "./InputLogin/Email";
+import cadastrar from "../services/cadastro"
+import BotaoLc from "./buttonLogin/BotaoLc"
+import fundo from "../assets/images/adote2.png"
 
 
 
 function Cadastro() {
+    function cadastrarUsuario(e) {
+        e.preventDefault()
+        console.log(`usuario ${email} foi cadastratado com a senha: ${password}`)
+    }
 
+    const [name, setName] = useState()
+    const [password, setPassword] = useState()
+    const [email, setEmail] = useState()
     const [confirmPass, setConfirmPass] = useState()
-    const [numeroContato, setNumeroContato] = useState('');
+
 
     return (
-        <div>
-           
+        <div className="body">
+            <div className="left"
+                style={{ backgroundImage: `url(${fundo})` }}>
+            </div>
+
             <div className="FormCadastro">
+
+                <BotaoLc />
+
                 <form onSubmit={cadastrarUsuario}>
+                    
+                    <Input
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        label={"nome"}
+                    />
+
+                    <Input
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        label={"email"}
+                    />
+
+                    <Input
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        label={"senha"}
+                    />
+
+                    <Input
+                        value={confirmPass}
+                        onChange={(e) => setConfirmPass(e.target.value)}
+                        required
+                        label={"Confirme a senha"}
+                    />
+
 
                     <div>
-                        <label htmlFor="name" >Nome Completo</label>
-                        <input
-                            className="input"
-                            type="text"
-                            id="name"
-                            name="name"
-                            placeholder="Digite seu nome"
-                            onChange={(e) => setName(e.target.value)}
-                        />
-                    </div>
-                    <div>
-                        <label htmlFor="email">Email</label>
-                        <input
-                            className="input"
-                            type="email"
-                            id="email"
-                            email="email"
-                            value={email}
-                            placeholder="Digite seu email"
-                            onChange={(e) => setEmail(e.target.value)}
-                        />
-                    </div>
-                    <div>
-                        <label htmlFor="password">Senha</label>
-                        <input
-                            className="input"
-                            type="password"
-                            id="password"
-                            name="password"
-                            placeholder="Digite sua senha"
-                            onChange={(e) => setPassword(e.target.value)}
-                        />
-                    </div>
-                    <div>
-                        <label htmlFor="confirmPass">Confirme sua senha</label>
-                        <input
-                            className="input"
-                            type="password"
-                            id="confirmPass"
-                            name="confirmPass"
-                            placeholder="Confirme sua senha"
-                            onChange={(e) => setConfirmPass(e.target.value)}
-                            required
-                            aria-invalid={!confirmPass}
-                        />
-                        {!confirmPass && <span style={{ color: 'red' }}>A confirmação de senha é obrigatória.</span>}
-                    </div>
+                        <label className="labelCadastrar">
+                            <button
+                                className="BotaoCadastrar"
+                                type="button"
+                                value={cadastrar}
+                                onClick={() => cadastrar(email, password)}
+                            > <h3>Cadastrar</h3>
+                            </button>
 
-                    <div>
-                        <label htmlFor="numeroContato">Número para Contato</label>
-                        <input
-                            type="tel"  
-                            id="numeroContato"
-                            name="numeroContato"
-                            placeholder="Digite seu número de contato"
-                            value={numeroContato}
-                            onChange={(e) => setNumeroContato(e.target.value)}
-                            pattern="[0-9]*"  
-                            required 
-                        />
-                    </div>
-
-                    <div>
-                        <input className="input"
-                            type="button"
-                            value="cadastrar"
-                            onClick={() => cadastro(email, password)} />
-
+                        </label>
                     </div>
                 </form>
             </div>
