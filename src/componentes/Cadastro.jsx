@@ -1,7 +1,7 @@
 import "../styles/Cadastro.sass"
 import { useState } from "react"
 import Input from "./InputLogin/Email";
-import cadastrar from "../services/cadastro"
+import cadastro from "../services/cadastro"
 import BotaoLc from "./buttonLogin/BotaoLc"
 import fundo from "../assets/images/adote2.png"
 
@@ -14,8 +14,8 @@ function Cadastro() {
     }
 
     const [name, setName] = useState()
-    const [password, setPassword] = useState()
     const [email, setEmail] = useState()
+    const [password, setPassword] = useState()
     const [confirmPass, setConfirmPass] = useState()
 
 
@@ -62,8 +62,8 @@ function Cadastro() {
                             <button
                                 className="BotaoCadastrar"
                                 type="button"
-                                value={cadastrar}
-                                onClick={() => cadastrar(email, password)}
+                                value={cadastro}
+                                onClick={() => cadastro(name, email, password )}
                             > <h3>Cadastrar</h3>
                             </button>
 

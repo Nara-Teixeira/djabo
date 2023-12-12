@@ -8,7 +8,7 @@ async function login(email, password) {
     senha: password
   })
   
-  console.log('jjjjj',response)
+  console.log('deu bom',response)
 
 
 }

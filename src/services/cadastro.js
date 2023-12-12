@@ -1,13 +1,12 @@
 import api from "./api";
 
-async function cadastro(name, email, password, numeroContato) {
+async function cadastro(name, email, password,) {
     try {
         // requisição post para cadastrar o usuário
-        const responseCadastro = await api.post('/cadastro', {
+        const responseCadastro = await api.post('/criar', {
             nome: name,
             email: email,
             senha: password,
-            numero: numeroContato
         });
 
         console.log(responseCadastro);

@@ -6,16 +6,16 @@ import Container from "./componentes/Container";
 
 function App() {
   return (
-   
-      <>
-        {/* <Navbar />
-        <Rotas/> */}
+
+    <>
+      {/* <Navbar />
+      <Rotas /> */}
       <Navbar/>
       <Container/>  
-      </>
+    </>
 
 
-    
+
   );
 }
 
