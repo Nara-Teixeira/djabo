@@ -1,4 +1,4 @@
-
+import "./Botao.sass"
 
 function Botao(props) {
 
@@ -11,9 +11,8 @@ function Botao(props) {
                     type={props.type}
                     checked={props.lembrar}
                     onChange={props.onChange}
-                    onClick={props.onClick}
                 />
-                <h4>Lembre-se de mim</h4>
+                <h4 className="agaquatro">Lembre-se de mim</h4>
             </label>
 
 

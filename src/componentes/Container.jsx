@@ -5,15 +5,20 @@ import iconvenda from "../assets/images/etiqueta.png"
 import iconcaixa from "../assets/images/caixa.png"
 import iconsaude from "../assets/images/cruz.png"
 import Produtos from "./Produtos";
-import ProdutoPronto from "./ProdutoPronto"
+import ProdutoPronto from "./ProdutoPronto";
 import Footer from "./Footer";
 import Pet from "./Pet";
-import PetPronto from "./PetPronto"
+import PetPronto from "./PetPronto";
+import NavHome from "./NavHome";
+
 
 function Container() {
 
+
   return (
-    <div className="body">
+
+    <div className="bori">
+      <NavHome />
       <div className="Container">
         <div className="divPropaganda">
           <div className="icon"><img className="imgicon" src={iconsaude} alt="icone saude" /></div>
@@ -44,9 +49,9 @@ function Container() {
 
       <div className="divDosProduto">
 
-        <ProdutoPronto/>
-        <ProdutoPronto/>
-        <ProdutoPronto/>
+        <ProdutoPronto />
+        <ProdutoPronto />
+        <ProdutoPronto />
 
         <Produtos />
       </div>
@@ -56,19 +61,19 @@ function Container() {
       </div>
 
       <div className="divDosPet">
-        <PetPronto/>
-        <PetPronto/>
-        <PetPronto/>
-        
-        <Pet/>
-
-
+        <PetPronto />
+        <PetPronto />
+        <PetPronto />
+        <Pet />
       </div>
 
-      <Footer />
+      <div>
+        <Footer />
+      </div>
+
     </div>
 
   )
 }
 
-export default Container
+export default Container;

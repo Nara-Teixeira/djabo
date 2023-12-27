@@ -4,6 +4,7 @@ import Input from "./InputLogin/Email";
 import cadastro from "../services/cadastro"
 import BotaoLc from "./buttonLogin/BotaoLc"
 import fundo from "../assets/images/adote2.png"
+import Navbar from "./Navbar";
 
 
 
@@ -21,6 +22,7 @@ function Cadastro() {
 
     return (
         <div className="body">
+            <Navbar/>
             <div className="left"
                 style={{ backgroundImage: `url(${fundo})` }}>
             </div>

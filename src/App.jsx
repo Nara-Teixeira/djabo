@@ -1,17 +1,11 @@
-import Navbar from "./componentes/Navbar";
 import './app.sass'
-// import Rotas from "./routes/Rotas";
-import Container from "./componentes/Container";
-
+import Rotas from './routes/Rotas';
 
 function App() {
   return (
 
     <>
-      {/* <Navbar />
-      <Rotas /> */}
-      <Navbar/>
-      <Container/>  
+      <Rotas/>
     </>
 
 
