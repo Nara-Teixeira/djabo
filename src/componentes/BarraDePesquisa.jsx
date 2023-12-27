@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import "../styles/BarraDePesquisa.sass"
-import search from "../assets/images/search_circle.svg"
-
+import "../styles/BarraDePesquisa.sass";
+import search from "../assets/images/search_circle.svg";
 
 const SearchBar = ({ onSearch }) => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -11,20 +10,26 @@ const SearchBar = ({ onSearch }) => {
   };
 
   const handleSearch = () => {
-    // Execute a ação de pesquisa com o termo inserido
-    onSearch(searchTerm);
+    // Verifica se onSearch é uma função antes de chamar
+    if (typeof onSearch === 'function') {
+      onSearch(searchTerm);
+    } else {
+      console.error('onSearch não é uma função válida');
+    }
   };
 
   return (
     <div className='divDaBarra'>
-      <input 
+      <input
         className='barra'
         type="text"
-        placeholder="Oque seu pet precisa?"
+        placeholder="O que seu pet precisa?"
         value={searchTerm}
         onChange={handleInputChange}
       />
-      <button className='botaoPesquisar' onClick={handleSearch}> <img src={search} alt="procurar" /> </button>
+      <button className='botaoPesquisar' onClick={handleSearch}>
+        <img src={search} alt="procurar" />
+      </button>
     </div>
   );
 };
